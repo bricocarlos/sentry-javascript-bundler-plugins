@@ -233,6 +233,8 @@ export function determineReleaseName(): string | undefined {
     process.env["ZEIT_BITBUCKET_COMMIT_SHA"] ||
     // Flightcontrol - https://www.flightcontrol.dev/docs/guides/flightcontrol/environment-variables#built-in-environment-variables
     process.env["FC_GIT_COMMIT_SHA"] ||
+    // Heroku - https://devcenter.heroku.com/articles/buildpack-api#bin-compile-summary
+    process.env["SOURCE_VERSION"] ||
     gitRevision()
   );
 }
